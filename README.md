@@ -1,2 +1,0 @@
-# Portofolio_Alfredo
-web
