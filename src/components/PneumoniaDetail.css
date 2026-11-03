@@ -1,0 +1,505 @@
+.pneumonia-detail {
+  --p-blue: #77a7ff;
+  --p-violet: #a78bfa;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 118px 24px 70px;
+  color: #e9edf8;
+  background:
+    radial-gradient(ellipse at 78% 5%, rgba(94, 76, 190, .15), transparent 35%),
+    radial-gradient(ellipse at 10% 22%, rgba(49, 112, 205, .12), transparent 34%);
+}
+.pneumonia-wrap { width: min(1180px, 100%); margin: 0 auto; }
+.pneumonia-back {
+  display: inline-flex; align-items: center; gap: 9px; margin-bottom: 30px;
+  padding: 10px 15px; border: 1px solid rgba(160,180,220,.18); border-radius: 30px;
+  color: #dce6fb; background: rgba(255,255,255,.035); cursor: pointer;
+  font: inherit; font-size: .85rem; transition: .2s ease;
+}
+.pneumonia-back:hover { border-color: rgba(119,167,255,.6); transform: translateX(-3px); }
+.pneumonia-hero {
+  position: relative; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center;
+  min-height: 360px; overflow: hidden; padding: clamp(28px,5vw,64px);
+  border: 1px solid rgba(145,165,220,.17); border-radius: 26px;
+  background: linear-gradient(120deg, rgba(18,29,57,.92), rgba(23,25,54,.82));
+  box-shadow: 0 25px 90px rgba(0,0,0,.2);
+}
+.pneumonia-hero::after { content:""; position:absolute; width:480px; height:240px; right:8%; bottom:-190px; background:#647cf5; filter:blur(100px); opacity:.23; }
+.pneumonia-hero-content { position:relative; z-index:2; }
+.pneumonia-eyebrow,.pneumonia-kicker { display:flex; align-items:center; gap:9px; color:#9ebaff; font-size:.72rem; letter-spacing:.14em; font-weight:650; }
+.pneumonia-hero h1 { margin:22px 0 4px; font-size:clamp(2.8rem,6vw,5rem); line-height:1; letter-spacing:-.055em; }
+.pneumonia-hero h1 span { color:#8d9cff; }
+.pneumonia-hero h2 { margin:13px 0; color:#c4cce0; font-size:clamp(1rem,2vw,1.35rem); font-weight:500; }
+.pneumonia-hero p,.pneumonia-section>p { max-width:720px; color:#aeb9d0; line-height:1.85; font-size:.94rem; }
+.pneumonia-hero-tags,.pneumonia-tool-list,.pneumonia-metric-tags { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
+.pneumonia-hero-tags span,.pneumonia-tool-list span,.pneumonia-metric-tags span {
+  padding:8px 12px; border:1px solid rgba(139,163,220,.2); border-radius:30px;
+  color:#c9d7f4; background:rgba(255,255,255,.045); font-size:.75rem;
+}
+.pneumonia-visual { position:relative; width:min(290px,100%); aspect-ratio:1; justify-self:center; display:grid; place-items:center; }
+.pneumonia-scan-ring { position:absolute; border:1px solid rgba(133,158,255,.28); border-radius:50%; }
+.ring-one { inset:5%; box-shadow:0 0 55px rgba(103,122,255,.12), inset 0 0 45px rgba(103,122,255,.08); }
+.ring-two { inset:19%; border-style:dashed; animation:pneumonia-spin 35s linear infinite; }
+.pneumonia-scan-core { width:42%; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; color:#b5c4ff; background:radial-gradient(circle,rgba(116,139,255,.3),rgba(60,73,135,.08)); box-shadow:0 0 65px rgba(105,121,255,.22); }
+.scan-label { position:absolute; color:#8496c2; font-size:.57rem; letter-spacing:.16em; }
+.scan-label-top { top:8%; }.scan-label-bottom { bottom:8%; }
+@keyframes pneumonia-spin { to { transform:rotate(360deg); } }
+.pneumonia-layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:54px; margin-top:62px; align-items:start; }
+.pneumonia-toc { position:sticky; top:105px; display:flex; flex-direction:column; gap:5px; padding:17px 12px; border:1px solid rgba(145,165,220,.13); border-radius:16px; background:rgba(16,25,48,.58); }
+.pneumonia-toc>span { padding:7px 10px 12px; color:#7f91b9; font-size:.66rem; letter-spacing:.15em; }
+.pneumonia-toc button { display:flex; align-items:center; gap:10px; padding:10px; border:0; border-radius:8px; text-align:left; color:#9caac5; background:transparent; font:inherit; font-size:.77rem; cursor:pointer; transition:.2s; }
+.pneumonia-toc button small { color:#7487b1; font-size:.65rem; }
+.pneumonia-toc button:hover,.pneumonia-toc button.active { color:#dce7ff; background:rgba(109,137,220,.12); }
+.pneumonia-toc button.active small { color:#a9bdff; }
+.pneumonia-content { min-width:0; }
+.pneumonia-section { padding:0 0 48px; margin:0 0 45px; border-bottom:1px solid rgba(150,170,220,.13); scroll-margin-top:110px; }
+.pneumonia-section h2 { margin:13px 0 16px; color:#f0f3ff; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:-.035em; }
+.pneumonia-section h3 { margin:27px 0 13px; color:#dce5f8; font-size:1rem; }
+.pneumonia-preline { white-space:pre-line; }
+.pneumonia-objectives { display:grid; gap:10px; margin-top:24px; }
+.pneumonia-objective { display:flex; gap:17px; align-items:flex-start; padding:16px 18px; border:1px solid rgba(145,165,220,.13); border-radius:12px; background:rgba(255,255,255,.025); }
+.pneumonia-objective>span,.pneumonia-step>span { color:#94aaff; font-size:.75rem; font-weight:700; }
+.pneumonia-objective p,.pneumonia-step p,.pneumonia-arch-card p { margin:0; color:#aeb9d0; font-size:.87rem; line-height:1.7; }
+.pneumonia-dataset-total { display:flex; align-items:baseline; gap:13px; margin:25px 0 18px; padding:22px; border:1px solid rgba(125,150,235,.2); border-radius:15px; background:linear-gradient(100deg,rgba(80,111,190,.13),rgba(135,99,190,.08)); }
+.pneumonia-dataset-total>strong { color:#dce5ff; font-size:2.3rem; letter-spacing:-.05em; }
+.pneumonia-dataset-total>span { color:#aab8d5; font-size:.83rem; }
+.pneumonia-dataset-total div { display:flex; gap:8px; margin-left:auto; flex-wrap:wrap; }
+.pneumonia-dataset-total div span { color:#b6c5ed; font-size:.62rem; letter-spacing:.08em; }
+.pneumonia-table { overflow:hidden; border:1px solid rgba(145,165,220,.15); border-radius:12px; }
+.pneumonia-table-row { display:grid; grid-template-columns:1fr auto; gap:14px; padding:13px 17px; border-bottom:1px solid rgba(145,165,220,.1); color:#b6c2d9; font-size:.84rem; }
+.pneumonia-table-row:last-child { border-bottom:0; }
+.pneumonia-table-row strong { color:#e0e8fb; font-weight:600; }
+.pneumonia-table-row.total { background:rgba(107,133,210,.1); }
+.pneumonia-source { margin-top:13px!important; font-size:.76rem!important; }
+.pneumonia-source a { color:#9bb7ff; text-decoration:none; }
+.pneumonia-timeline { display:grid; gap:0; margin-top:24px; }
+.pneumonia-step { display:grid; grid-template-columns:38px 1fr; gap:12px; padding:0 0 24px; position:relative; }
+.pneumonia-step:not(:last-child)::before { content:""; position:absolute; top:20px; bottom:0; left:10px; width:1px; background:rgba(135,158,220,.25); }
+.pneumonia-step>span { position:relative; z-index:1; display:grid; place-items:center; width:22px; height:22px; border:1px solid rgba(139,163,240,.35); border-radius:50%; background:#121d38; font-size:.6rem; }
+.pneumonia-step h3,.pneumonia-arch-card h3 { margin:0 0 6px; font-size:.92rem; }
+.pneumonia-architecture { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:24px; }
+.pneumonia-arch-card { display:flex; gap:14px; padding:17px; border:1px solid rgba(145,165,220,.15); border-radius:13px; background:linear-gradient(135deg,rgba(91,117,195,.09),rgba(255,255,255,.02)); }
+.pneumonia-arch-card>span { color:#9cafff; font-size:.75rem; font-weight:700; }
+.config-table .pneumonia-table-row { grid-template-columns:1fr auto; }
+.pneumonia-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:25px 0 15px; }
+.pneumonia-metric { padding:20px; border:1px solid rgba(140,161,230,.18); border-radius:14px; background:rgba(255,255,255,.035); }
+.pneumonia-metric strong { display:block; color:#b8c7ff; font-size:1.8rem; letter-spacing:-.04em; }
+.pneumonia-metric span { display:block; margin-top:5px; color:#aab6ce; font-size:.75rem; }
+.pneumonia-correct { display:flex; align-items:center; gap:12px; padding:17px 20px; border:1px solid rgba(91,190,160,.2); border-radius:12px; color:#8fdbbf; background:rgba(65,160,130,.07); }
+.pneumonia-correct strong { font-size:1.1rem; }.pneumonia-correct span { color:#b4c9c5; font-size:.8rem; }
+.report-table .pneumonia-table-row { grid-template-columns:1.2fr repeat(4,minmax(48px, .8fr)); gap:7px; font-size:.75rem; padding:13px 10px; }
+.report-table .report-head { color:#8fa5d3; background:rgba(115,139,207,.09); font-size:.68rem; }
+.report-table .report-head strong { color:#aebee2; }
+.pneumonia-thesis { padding:23px; border:1px solid rgba(145,165,220,.16); border-radius:15px; background:rgba(255,255,255,.03); }
+.pneumonia-thesis>span { color:#9fb5f4; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; }
+.pneumonia-thesis h3 { margin:12px 0 24px; line-height:1.65; }
+.pneumonia-thesis-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
+.pneumonia-thesis-meta div { display:grid; gap:5px; }
+.pneumonia-thesis-meta small { color:#8293b6; font-size:.68rem; }
+.pneumonia-thesis-meta strong { color:#d3def4; font-size:.83rem; font-weight:550; }
+.pneumonia-disclaimer { display:flex; gap:13px; margin-top:16px; padding:17px; border:1px solid rgba(215,175,105,.2); border-radius:12px; color:#e1c28e; background:rgba(180,135,65,.06); }
+.pneumonia-disclaimer strong { font-size:.83rem; }.pneumonia-disclaimer p { margin:6px 0 0; color:#bdb29c; font-size:.78rem; line-height:1.65; }
+.pneumonia-repository { display:inline-flex; align-items:center; gap:10px; margin-top:24px; padding:13px 17px; border:1px solid rgba(137,163,235,.3); border-radius:9px; color:#dbe5ff; background:rgba(101,127,204,.12); text-decoration:none; font-size:.83rem; transition:.2s; }
+.pneumonia-repository:hover { border-color:#91aaff; transform:translateY(-2px); }
+.pneumonia-footer { padding:20px 0; color:#7485a8; text-align:center; font-size:.65rem; letter-spacing:.16em; }
+@media(max-width:850px) {
+  .pneumonia-layout { grid-template-columns:1fr; gap:25px; }
+  .pneumonia-toc { position:relative; top:auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .pneumonia-toc>span { grid-column:1/-1; }
+  .pneumonia-hero { grid-template-columns:1fr; }
+  .pneumonia-visual { position:absolute; right:-65px; top:25px; width:220px; opacity:.35; }
+}
+@media(max-width:560px) {
+  .pneumonia-detail { padding:100px 16px 50px; }
+  .pneumonia-hero { padding:27px 22px; min-height:350px; }
+  .pneumonia-hero h1 { font-size:2.8rem; }
+  .pneumonia-visual { right:-85px; top:70px; opacity:.22; }
+  .pneumonia-layout { margin-top:35px; }
+  .pneumonia-architecture,.pneumonia-metrics,.pneumonia-thesis-meta { grid-template-columns:1fr; }
+  .pneumonia-toc { grid-template-columns:1fr 1fr; }
+  .pneumonia-dataset-total { flex-wrap:wrap; }
+  .pneumonia-dataset-total div { width:100%; margin-left:0; }
+  .report-table .pneumonia-table-row { grid-template-columns:1.1fr repeat(4,minmax(40px,.8fr)); font-size:.65rem; padding:12px 7px; }
+}
+
+
+/* PNEUMONIA HERO REFINEMENT */
+.pneumonia-hero {
+  border: none;
+}
+
+.pneumonia-hero-content {
+  transform: translateX(-28px);
+}
+
+@media (max-width: 850px) {
+  .pneumonia-hero-content {
+    transform: translateX(-12px);
+  }
+}
+
+
+/* PNEUMONIA — X-RAY SCANNING ANIMATION */
+.pneumonia-hero {
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+.pneumonia-hero::before {
+  content: none !important;
+  border: 0 !important;
+}
+
+.pneumonia-visual {
+  isolation: isolate;
+  overflow: visible;
+  animation: pneumonia-visual-float 6s ease-in-out infinite;
+}
+
+.pneumonia-scan-ring.ring-one {
+  animation: pneumonia-ring-pulse 5s ease-in-out infinite;
+}
+
+.pneumonia-scan-ring.ring-two {
+  animation: pneumonia-spin 22s linear infinite;
+}
+
+.pneumonia-scan-core {
+  position: relative;
+  z-index: 2;
+  animation: pneumonia-core-pulse 3.5s ease-in-out infinite;
+}
+
+.pneumonia-scan-line {
+  position: absolute;
+  z-index: 3;
+  left: 13%;
+  right: 13%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a9c6ff, #8e9cff, transparent);
+  box-shadow: 0 0 12px 2px rgba(121, 157, 255, .55);
+  animation: pneumonia-scan-sweep 4.5s ease-in-out infinite;
+}
+
+.pneumonia-particle {
+  position: absolute;
+  z-index: 4;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b9caff;
+  box-shadow: 0 0 13px 3px rgba(119, 155, 255, .55);
+}
+
+.pneumonia-particle.particle-one {
+  top: 22%; left: 19%;
+  animation: pneumonia-particle-one 6s ease-in-out infinite;
+}
+.pneumonia-particle.particle-two {
+  top: 65%; right: 16%;
+  width: 4px; height: 4px;
+  animation: pneumonia-particle-two 7s ease-in-out infinite;
+}
+.pneumonia-particle.particle-three {
+  bottom: 17%; left: 42%;
+  width: 5px; height: 5px;
+  animation: pneumonia-particle-three 5s ease-in-out infinite;
+}
+
+@keyframes pneumonia-visual-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pneumonia-ring-pulse {
+  0%, 100% { opacity: .55; transform: scale(.97); }
+  50% { opacity: 1; transform: scale(1.035); }
+}
+@keyframes pneumonia-core-pulse {
+  0%, 100% { transform: scale(.94); filter: brightness(.9); }
+  50% { transform: scale(1.07); filter: brightness(1.25); }
+}
+@keyframes pneumonia-scan-sweep {
+  0%, 100% { transform: translateY(-75px); opacity: 0; }
+  15%, 85% { opacity: .9; }
+  50% { transform: translateY(75px); opacity: .65; }
+}
+@keyframes pneumonia-particle-one {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, -13px); }
+}
+@keyframes pneumonia-particle-two {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-13px, 15px); }
+}
+@keyframes pneumonia-particle-three {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smartpos-hero-orb,
+  .smartpos-orbit,
+  .smartpos-orb-core,
+  .smartpos-orb-particle,
+  .pneumonia-visual,
+  .pneumonia-scan-ring,
+  .pneumonia-scan-core,
+  .pneumonia-scan-line,
+  .pneumonia-particle {
+    animation: none !important;
+  }
+}
+
+
+/* CAPSNET — REMOVE BLUE OUTLINES FROM HERO TECHNOLOGY LABELS */
+.pneumonia-hero-tags span {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+
+.pneumonia-bottom-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+
+/* BLUE ARCANE DRAGON — SHARED SIDEBAR DECORATION */
+
+
+.project-character-scene {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin: 22px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.rocket-character,
+.cat-character {
+  position: relative;
+  width: 100%;
+  max-width: 170px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.rocket-svg {
+  width: 155px;
+  height: 225px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 15px rgba(29, 145, 255, .25));
+  z-index: 2;
+}
+
+.rocket-flame {
+  position: absolute;
+  width: 20px;
+  height: 48px;
+  left: calc(50% - 10px);
+  bottom: 14px;
+  border-radius: 50% 50% 65% 65%;
+  background: linear-gradient(to bottom, #E9FFFF, #42CFFF 40%, #2877FF 75%, transparent);
+  filter: drop-shadow(0 0 12px #36BFFF);
+  transform-origin: top center;
+  z-index: 1;
+}
+
+.rocket-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #79DFFF;
+  box-shadow: 0 0 12px #39BFFF;
+}
+
+.particle-a { top: 25%; left: 8%; }
+.particle-b { top: 60%; right: 5%; width: 4px; height: 4px; }
+
+.cat-svg {
+  width: 190px;
+  height: 210px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 14px rgba(60, 145, 220, .22));
+}
+
+.cat-sparkle {
+  position: absolute;
+  color: #7BDFFF;
+  text-shadow: 0 0 12px #39BFFF;
+  font-size: 17px;
+}
+
+.sparkle-a { top: 22%; right: 2%; }
+.sparkle-b { bottom: 24%; left: 3%; }
+
+.character-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(130, 205, 255, .65);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 850px) {
+  .project-character-scene {
+    height: 220px;
+    margin-top: 12px;
+  }
+
+  .rocket-character,
+  .cat-character {
+    height: 190px;
+  }
+
+  .rocket-svg {
+    width: 110px;
+    height: 160px;
+  }
+
+  .rocket-flame {
+    bottom: 10px;
+    height: 32px;
+    width: 14px;
+    left: calc(50% - 7px);
+  }
+
+  .cat-svg {
+    width: 130px;
+    height: 155px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-character-scene {
+    display: none;
+  }
+}
+
+/* CAPSULE SPACESHIP — OUTSIDE TABLE OF CONTENTS */
+.pneumonia-sidebar {
+  position: sticky;
+  top: 105px;
+  align-self: start;
+  min-width: 0;
+}
+.pneumonia-sidebar .capsule-scene {
+  height: 340px;
+  margin: 12px auto 0;
+  overflow: visible;
+}
+.capsule-character {
+  position: relative;
+  width: 100%;
+  max-width: 190px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+.capsule-svg {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  height: 245px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 17px rgba(54, 177, 255, .3));
+}
+.capsule-engine {
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  left: calc(50% - 13px);
+  width: 26px;
+  height: 55px;
+  border-radius: 50% 50% 65% 65%;
+  background: linear-gradient(to bottom, #E9FFFF, #4DDCFF 40%, #397BFF 78%, transparent);
+  filter: drop-shadow(0 0 13px #39C9FF);
+  transform-origin: top center;
+}
+.capsule-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8CEBFF;
+  box-shadow: 0 0 13px #39BFFF;
+}
+.capsule-particle-a { top: 24%; left: 4%; }
+.capsule-particle-b { top: 60%; right: 3%; width: 4px; height: 4px; }
+
+@media (max-width: 850px) {
+  .pneumonia-sidebar {
+    position: relative;
+    top: auto;
+  }
+  .pneumonia-sidebar .capsule-scene {
+    height: 240px;
+    margin-top: 5px;
+  }
+  .capsule-character { height: 210px; }
+  .capsule-svg { width: 135px; height: 185px; }
+  .capsule-engine {
+    width: 18px;
+    height: 38px;
+    left: calc(50% - 9px);
+    bottom: 12px;
+  }
+}
+
+/* Capsule Spaceship: horizontal exploration pod */
+.pneumonia-sidebar .pneumonia-toc {
+  position: static;
+}
+
+.capsule-character {
+  width: 100%;
+  max-width: 270px;
+  height: 220px;
+}
+
+.capsule-svg {
+  width: 260px;
+  height: 170px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 18px rgba(38, 137, 210, 0.25));
+}
+
+@media (max-width: 850px) {
+  .capsule-character {
+    max-width: 220px;
+    height: 170px;
+  }
+
+  .capsule-svg {
+    width: 210px;
+    height: 135px;
+  }
+}
+
+/* Hide project characters on mobile for better reading */
+@media (max-width: 850px) {
+  .pneumonia-sidebar .capsule-scene {
+    display: none !important;
+  }
+}
